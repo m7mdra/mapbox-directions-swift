@@ -79,7 +79,7 @@ open class RouteOptions: DirectionsOptions {
         assert(!queries.isEmpty, "No query")
         
         let queryComponent = queries.joined(separator: ";")
-        return "directions/v5/\(profileIdentifier.rawValue)/\(queryComponent).json"
+        return "directions/v5/\(profileIdentifier.rawValue)/\(queryComponent)"
     }
 
     /**
@@ -235,7 +235,7 @@ open class RouteOptionsV4: RouteOptions {
 
         let profileIdentifier = self.profileIdentifier.rawValue.replacingOccurrences(of: "/", with: ".")
         let queryComponent = queries.joined(separator: ";")
-        return "v4/directions/\(profileIdentifier)/\(queryComponent).json"
+        return "v4/directions/\(profileIdentifier)/\(queryComponent)"
     }
 
     override var params: [URLQueryItem] {
